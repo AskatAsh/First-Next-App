@@ -1,13 +1,13 @@
-"use client";  // Ensure this is a client-side component
-import { usePathname } from 'next/navigation'; // Hook for client-side navigation
+"use client"; 
+import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs"; // Use KindeAuth hook to manage session
+import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs";
 import Image from 'next/image';
 
 export default function Navbar() {
-  const pathname = usePathname();  // Get current route
-  const { isAuthenticated, user } = useKindeAuth(); // Get user info from Kinde
+  const pathname = usePathname();
+  const { isAuthenticated, user } = useKindeAuth();
 
   return (
     <nav className="flex items-center justify-between flex-wrap gap-6 pb-2">
