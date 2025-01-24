@@ -10,6 +10,8 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { AuthProvider } from "./AuthProvider";
 import Image from "next/image";
 // import Navbar from "./components/Navbar";
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(() => import('./components/Navbar'), {ssr: false});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -43,8 +45,8 @@ export default async function RootLayout({ children, currentpath }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased p-6`}
         >
-          {/* <Navbar /> */}
-          <nav className="flex items-center justify-between flex-wrap gap-6 pb-2">
+          <Navbar />
+          {/* <nav className="flex items-center justify-between flex-wrap gap-6 pb-2">
             <div className="flex items-center gap-2 font-bold text-lg">
               <Image src="/logo.png" alt="app logo" width={50} height={50} /><span>Blog View</span>
             </div>
@@ -76,7 +78,7 @@ export default async function RootLayout({ children, currentpath }) {
                 <LoginLink className="border border-gray-100 rounded-full px-4 py-1">Sign in</LoginLink>
               </div>
             )}
-          </nav>
+          </nav> */}
           <hr className="border-gray-800" />
           {children}
         </body>
