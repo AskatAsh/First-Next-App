@@ -14,11 +14,10 @@ export default async function Profile() {
 
   if (!isUserAuthenticated) {
     redirect("/api/auth/login");
-    return null;
   }
 
   return (
-    <div className="my-6">
+    <div className="my-6 min-h-screen">
       <p>Hello, {user.given_name} {user.family_name}</p>
       <p className="text-2xl font-semibold mt-2">Welcome to your profile!</p>
     </div>
