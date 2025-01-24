@@ -16,12 +16,12 @@ export default async function Blogs() {
   return (
     <main className="mt-10">
       <div className="text-4xl font-semibold border-b border-gray-700 pb-3 ">
-        Blog Posts: {blogs.length}
+        Total Blog Posts: {blogs.length}
       </div>
 
-      <ul className="my-6">
+      <ul className="my-6 ml-8">
         {blogs.map((blog, idx) => (
-          <li key={idx} className="hover:text-blue-500 list-decimal ml-4 my-2">
+          <li key={idx} className="hover:text-blue-500 list-decimal my-2">
             <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
           </li>
         ))}

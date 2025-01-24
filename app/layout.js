@@ -37,8 +37,11 @@ export default async function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased p-6`}
         >
-          <nav className="flex items-center justify-between flex-wrap gap-6">
-            <ul className="flex gap-6 pb-2">
+          <nav className="flex items-center justify-between flex-wrap gap-6 pb-2">
+            <div className="flex items-center gap-2 font-bold text-lg">
+              <span>Blog View</span>
+            </div>
+            <ul className="flex items-center gap-6">
               <li>
                 <Link href="/">Home</Link>
               </li>
@@ -59,11 +62,11 @@ export default async function RootLayout({ children }) {
               </li>
             </ul>
             {isAuthenticated && user?.email ? (
-              <LogoutLink>Log out</LogoutLink>
+              <LogoutLink className="border border-gray-100 rounded-full px-4 py-1">Log out</LogoutLink>
             ) : (
               <div className="flex gap-6">
-                <LoginLink>Sign in</LoginLink>
                 <RegisterLink>Sign up</RegisterLink>
+                <LoginLink className="border border-gray-100 rounded-full px-4 py-1">Sign in</LoginLink>
               </div>
             )}
           </nav>
