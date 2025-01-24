@@ -11,7 +11,7 @@ import { AuthProvider } from "./AuthProvider";
 import Image from "next/image";
 // import Navbar from "./components/Navbar";
 import dynamic from 'next/dynamic';
-const Navbar = dynamic(() => import('./components/Navbar.js'), {ssr: false});
+const Navbar = dynamic(() => import('./components/Navbar'), {ssr: false});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
