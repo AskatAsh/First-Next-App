@@ -5,7 +5,7 @@ import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextj
 import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs"; // Use KindeAuth hook to manage session
 import Image from 'next/image';
 
-export default function NavBar() {
+export default function Navbar() {
   const pathname = usePathname();  // Get current route
   const { isAuthenticated, user } = useKindeAuth(); // Get user info from Kinde
 
