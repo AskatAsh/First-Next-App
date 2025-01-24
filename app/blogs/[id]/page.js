@@ -19,7 +19,7 @@ export default async function BlogPost({params}) {
       };
       const blogPost = await fetchBlogs();
   return (
-    <div className="my-6 space-y-4 max-w-xl mx-auto w-11/12 border border-gray-900 rounded-md p-4">
+    <div className="my-6 space-y-4 max-w-2xl mx-auto w-11/12 border border-gray-900 rounded-md p-4">
         <h1 className="text-2xl font-semibold">{blogPost.title}</h1>
         <p>{blogPost.body}</p>
     </div>
